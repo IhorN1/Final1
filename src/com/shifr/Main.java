@@ -4,18 +4,25 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
 	// write your code here
-        int key = 7;
+        System.out.println("Hi, friend! Please, etner your key and push Enter");
+        Scanner a = new Scanner(System.in);
+        int key = a.nextInt();
         String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ.,\"\":- ?!;";
-        Path path = Path.of("C:\\Users\\Ihor Nikolaiev\\Text for project.txt");
+        System.out.println("Friend! Please, input address your file and push Enter");
+        Scanner s = new Scanner(System.in);
+        String str = s.nextLine();
+        Path path = Path.of(str);
         List<String> list = Files.readAllLines(path);
-        for (String s : list) {
-            System.out.println(s);
+        for (String c : list) {
+            System.out.println(c);
         }
+
 //
 //        while (true){
 //            System.out.println("If you want to encrypt? Please press - 1");
