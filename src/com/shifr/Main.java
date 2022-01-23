@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 	// write your code here
         String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ.,\"\":- ?!;";
-        System.out.println("Hi, friend! If you want encrypt press 1 and Enter. If you want crack press 2 and Enter");
+        System.out.println("Hi, friend! If you want encrypt press 1 and Enter \n" + "If you want crack for key press 2 and Enter \n" + "If you want crack text for method Brute force press 3 and Enter \n" + "If you want crack text for method Cryptostatistic press 4 and Enter");
         Scanner b = new Scanner(System.in);
         int programm = b.nextInt();
         System.out.println("Friend! Please, choose your key and push Enter");
@@ -27,7 +27,7 @@ public class Main {
             System.out.println(c);
         }
         if (programm == 1){
-
+            System.out.println();
 
 
 
