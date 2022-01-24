@@ -25,8 +25,8 @@ public class Main {
 //        Path path = Path.of(str);
         ArrayList<String> arrayList = new ArrayList<>(Files.readAllLines(Path.of(str)));
         char[] charsArrayList = arrayList.toString().toCharArray();
-        for (int i = 0; i < arrayList.size(); i++) {
-            char arraList
+        for (int i = 0; i < charsArrayList.length; i++) {
+           char charsArray = charsArrayList[i];
             for (int j = 0; j < charsAlphabet.length; j++) {
 
             }
