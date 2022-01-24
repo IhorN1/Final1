@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 	// write your code here
         String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ.,\"\":- ?!;";
+        char[] charsAlphabet = alphabet.toCharArray();
         System.out.println("Hi, friend! If you want encrypt press 1 and Enter \n" + "If you want crack for key press 2 and Enter \n" + "If you want crack text for method Brute force press 3 and Enter \n" + "If you want crack text for method Cryptostatistic press 4 and Enter");
         Scanner b = new Scanner(System.in);
         int programm = b.nextInt();
@@ -23,10 +24,22 @@ public class Main {
         String str = s.nextLine();
 //        Path path = Path.of(str);
         ArrayList<String> arrayList = new ArrayList<>(Files.readAllLines(Path.of(str)));
-        for (String c : arrayList) {
-            System.out.println(c);
+        char[] charsArrayList = arrayList.toString().toCharArray();
+        for (int i = 0; i < arrayList.size(); i++) {
+            char arraList
+            for (int j = 0; j < charsAlphabet.length; j++) {
+
+            }
         }
+//        char[] arrayListChars = arrayList.
+//        for (String c : arrayList) {
+//            System.out.println(c);
+//        }
         if (programm == 1){
+
+
+
+
             System.out.println();
 
 
