@@ -3,10 +3,8 @@ package com.shifr;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.nio.file.Paths;
+import java.util.*;
 
 public class Main {
 
@@ -45,9 +43,15 @@ public class Main {
             System.out.println("Please, input address your new file and push Enter");
             Scanner sc = new Scanner(System.in);
             String addressNewFile = sc.nextLine();
-            Files.createFile(Path.of(addressNewFile));
-
-
+            Path file = Path.of(addressNewFile);
+            String temp = new String(result);
+            try {
+                byte[] bs = temp.getBytes();
+                Path writtenFilePath = Files.write(file, bs);
+                System.out.println("Written content in file:\n"+ new String(Files.readAllBytes(writtenFilePath)));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         } else if (programm == 2) {
 
