@@ -13,7 +13,7 @@ public class Main {
         String alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ.,\"\":- ?!;";
         char[] charsAlphabet = alphabet.toCharArray();
         while (true) {
-            System.out.println("Hi, friend! If you want encrypt press 1 and Enter \n" + "If you want crack for key press 2 and Enter \n" + "If you want crack text for method Brute force press 3 and Enter \n" + "If you want crack text for method Cryptostatistic press 4 and Enter");
+            System.out.println("Hi, friend! If you want encrypt press 1 and Enter \n" + "If you want crack for key press 2 and Enter \n" + "If you want crack text for method Brute force press 3 and Enter \n" + "If you want crack text for method Cryptostatistic press 4 and Enter \n" + "If you want exit press 5 and Enter");
             Scanner b = new Scanner(System.in);
             int programm = b.nextInt();
 
@@ -85,11 +85,31 @@ public class Main {
                     e.printStackTrace();
                 }
 
+            } else if (programm == 3) {
+                System.out.println("Friend! Please, input address your file and push Enter");
+                Scanner s = new Scanner(System.in);
+                String str = s.nextLine();
+                ArrayList<String> arrayList = new ArrayList<>(Files.readAllLines(Path.of(str)));
+                String fileContent = new String(String.valueOf(arrayList));
+                for (int i = 0; i < alphabet.length(); i++) {
+                    int keyA = i;
+                    int keyB = 76 - keyA;
+                    char[] charsArrayList = arrayList.toString().toCharArray();
+                    char[] result = new char[charsArrayList.length];
+                    for (int c = 0; c < charsArrayList.length; c++) {
+                        char charsArray = charsArrayList[c];
+                        for (int j = 0; j < charsAlphabet.length; j++) {
+                            char charsAlp = charsAlphabet[j];
+                            if (charsArray == charsAlp) {
+                                result[c] = charsAlphabet[(j + keyB) % charsAlphabet.length];
+                            }
+                        }
+                    }
+                    System.out.println(new String(result));
+                }
 
-            } else ;
-        }
 
-//
+                }
 //        while (true){
 //            System.out.println("If you want to encrypt? Please press - 1");
 //            System.out.println("Enter the key - ");
@@ -97,6 +117,7 @@ public class Main {
 //            System.out.println("Enter the key - ");
 //            if (1)
 
+            }
+        }
     }
-}
 
