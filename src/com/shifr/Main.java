@@ -9,15 +9,16 @@ import java.util.*;
 
 public class Main {
 
-    private static boolean isTextRight (String text){
+    private static boolean isTextRight(String text) {
         String[] strings = text.split(" ");
         for (String string : strings) {
-            if (string.length() > 25) {
+            if (string.length() > 20) {
                 return false;
-            }else {
+            } else {
                 return true;
             }
-        }return true;
+        }
+        return true;
     }
 
     public static void main(String[] args) throws IOException {
@@ -62,6 +63,7 @@ public class Main {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+                break;
 
             } else if (programm == 2) {
                 System.out.println("Friend! Please, choose your key and push Enter");
@@ -120,7 +122,7 @@ public class Main {
                     String stringResult = new String(result);
                     System.out.println(result);
                     boolean isValid = isTextRight(stringResult);
-                    if(isValid){
+                    if (isValid) {
                         System.out.println("Key is " + i);
                         System.out.println("Please, input address your new file and push Enter");
                         Scanner sc = new Scanner(System.in);
@@ -137,6 +139,15 @@ public class Main {
                         break;
                     }
                 }
+            }
+            else if (programm == 4){
+
+            }
+            else if(programm == 5){
+                break;
+            }
+            else {
+                System.out.println("You must press number for 1 to 5!");
             }
         }
     }
