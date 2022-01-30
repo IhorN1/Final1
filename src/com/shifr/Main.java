@@ -6,7 +6,19 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
 
+
 public class Main {
+
+    private static boolean isTextRight (String text){
+        String[] strings = text.split(" ");
+        for (String string : strings) {
+            if (string.length() > 25) {
+                return false;
+            }else {
+                return true;
+            }
+        }return true;
+    }
 
     public static void main(String[] args) throws IOException {
         // write your code here
@@ -105,19 +117,30 @@ public class Main {
                             }
                         }
                     }
-                    System.out.println(new String(result));
+                    String stringResult = new String(result);
+                    System.out.println(result);
+                    boolean isValid = isTextRight(stringResult);
+                    if(isValid){
+                        System.out.println("Key is " + i);
+                        System.out.println("Please, input address your new file and push Enter");
+                        Scanner sc = new Scanner(System.in);
+                        String addressNewFile = sc.nextLine();
+                        Path file = Path.of(addressNewFile);
+                        String temp = new String(result);
+                        try {
+                            byte[] bs = temp.getBytes();
+                            Path writtenFilePath = Files.write(file, bs);
+                            System.out.println("Written content in file:\n" + new String(Files.readAllBytes(writtenFilePath)));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    }
                 }
-
-
-                }
-//        while (true){
-//            System.out.println("If you want to encrypt? Please press - 1");
-//            System.out.println("Enter the key - ");
-//            System.out.println("If you want to decrypt? Please press - 2");
-//            System.out.println("Enter the key - ");
-//            if (1)
-
             }
         }
     }
+}
+
+
 
